@@ -1,8 +1,9 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/fintech
-    driver-class-name: org.postgresql.Driver
-    username: postgres
+    url: jdbc:mysql://localhost:3306/fintech?useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Mnikingang$0609
     hikari:
       minimum-idle: 5
       maximum-pool-size: 20
@@ -16,6 +17,7 @@ spring:
     show-sql: true
     properties:
       hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true  # Pretty-print SQL in logs
 server:
   port: 8080
